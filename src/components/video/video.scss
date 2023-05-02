@@ -1,0 +1,19 @@
+video {
+    display: block;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    height: 400px;
+    width: 224px;
+    border-radius: 8px;
+    box-shadow: -16px 16px 16px rgba(black, .3);
+}
+
+@media screen and (min-width: 721px) {
+    video {
+        height: 450px;
+        width: 250px;
+    }
+}
