@@ -1,0 +1,73 @@
+---
+import PageLayout from '../components/page-layout/page-layout';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Mike Lee: Fullstack Developer</title>
+	</head>
+	<body>
+		<PageLayout client:load>
+			<slot />
+		</PageLayout>
+	</body>
+</html>
+
+<style is:global lang='scss'>
+	@import '../_variables.scss';
+
+	html,
+	body {
+		padding: 0;
+		margin: 0;
+		font-family: Corn, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+			Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+		background-color: var(--color-primary);
+		color: var(--color-secondary);
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.grecaptcha-badge {
+		display: none;
+	}
+
+	@font-face {
+		font-family: Corn;
+		src: url('/CornDemo-Regular.ttf');
+		font-display: swap;
+	}
+
+	:root {
+		--color-primary: #{$color-bone};
+		--color-primary-light: #{$color-white};
+		--color-secondary: #{$color-graphite};
+	}
+
+	@media (prefers-color-scheme: light) {
+		:root {
+			--color-primary: #{$color-bone};
+			--color-primary-light: #{$color-white};
+			--color-secondary: #{$color-graphite};
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--color-primary: #{$color-graphite};
+			--color-primary-light: #{$color-gray};
+			--color-secondary: #{$color-bone};
+		}
+	}
+</style>
